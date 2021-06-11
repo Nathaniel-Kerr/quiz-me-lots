@@ -1,0 +1,7 @@
+<h1> Available Flashcards</h1>
+<h3><%= link_to "Home Page", root_path %><br></h3>
+<% @flashcards.each do |flashcard| %>
+    <h5><%= flashcard.question %><br>
+    <%= link_to "Answer/View Card", flashcard_path(flashcard) %></h2><br>
+    </h5>
+<% end %>

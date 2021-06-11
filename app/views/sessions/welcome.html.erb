@@ -1,0 +1,7 @@
+<h1>Welcome to quiz lot</h1>
+<%= link_to "Show all flashcards", flashcards_path %><br><br>
+
+<%= link_to 'Login', login_path('login') %><br>
+<%= button_to "Login With Google", "/auth/google_oauth2", method: :post %><br>
+<%= link_to 'Create Account', user_path('new') %><br>
+

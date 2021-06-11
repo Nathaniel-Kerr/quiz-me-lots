@@ -1,0 +1,32 @@
+<%= link_to "Home", user_path(Current.user) %><br>
+<%= form_for @flashcard do |f| %>
+    
+    <% if @flashcard.errors.any? %>
+        <div class="fields_with_errors">
+        <h2>Errors:</h2>
+        <ul>
+            <% @flashcard.errors.full_messages.each do |message| %>
+                <div><li><%= message %></li></div>
+            <% end %>
+        </ul>
+    <% end %>
+
+    <%= f.hidden_field :user_id %>
+
+    <%= f.label :question %>
+    <%= f.text_field :question %><br>
+
+    <%= f.label :answer %>
+    <%= f.text_field :answer %><br>
+
+    <%= f.fields_for :flashcard_subjects, @flashcardsubject do |ff| %>
+        <%= ff.label :subject_id, 'Select Subject: ' %>
+        <%= ff.collection_select(:subject_id, @subjects, :id, :name) %><br>
+        <% end %>
+        
+    <%= f.label :status, "Check to make post public" %>
+    <%= f.check_box :status  %><br>
+
+    <%= f.submit %>
+<% end %>
+<%= link_to "Show all flashcards", flashcards_path %>

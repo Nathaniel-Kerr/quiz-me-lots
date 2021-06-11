@@ -1,0 +1,17 @@
+<h1>Flashcard Question & Answer</h1>
+
+<h4><% @flashcard.subjects.each do |s| %>
+  <h4>Subject: <%= s.name %></h4>
+<% end %></h4>
+
+<h3>Question:<br><%= @flashcard.question %></h3><br><br>
+<h3>Answer:<br> <%= @flashcard.answer %></h3><br><br>
+
+<%= link_to "Back to Flashcards", flashcards_path %><br>
+
+<% if Current.user %>
+  <%= link_to "Create Subject", subject_path('new') %><br>
+  <%= link_to "Edit Card", edit_flashcard_path(@flashcard) %><br>
+  <%= link_to "Delete", @flashcard, method: :delete, data: {confirm: "Are you sure you want to delete this card?"} %>
+<% end %>
+

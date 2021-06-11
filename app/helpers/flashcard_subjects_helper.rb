@@ -1,0 +1,2 @@
+module FlashcardSubjectsHelper
+end
