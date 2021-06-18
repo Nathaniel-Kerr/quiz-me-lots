@@ -26,7 +26,6 @@ class FlashcardsController < ApplicationController
         @subjects = Subject.all 
         @flashcardsubject = FlashcardSubject.new
         
-    
     end
 
     def create
