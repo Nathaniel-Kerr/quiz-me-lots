@@ -1,0 +1,5 @@
+<% if Current.user %>
+      <%= link_to "Home Page", user_path(@user) %>
+    <% else %>
+      <%= link_to "Home", "/" %>
+    <% end %>
