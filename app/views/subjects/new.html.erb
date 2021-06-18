@@ -1,7 +1,5 @@
 <h1>Create New Subject</h1>
 
-<h3><%= link_to "Home Page", user_path(Current.user) %><br></h3>
-
 <%= form_for @subject do |f| %>
 
     <% if @subject.errors.any? %>
